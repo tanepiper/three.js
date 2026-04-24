@@ -76,7 +76,7 @@ function getWireframeIndex( geometry ) {
 
 	}
 
-	const attribute = new ( geometryPosition.count >= 65535 ? Uint32BufferAttribute : Uint16BufferAttribute )( indices, 1 );
+	const attribute = new ( geometryPosition.count > 65535 ? Uint32BufferAttribute : Uint16BufferAttribute )( indices, 1 );
 	attribute.version = getWireframeVersion( geometry );
 	attribute.__id = getWireframeId( geometry );
 

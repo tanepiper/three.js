@@ -124,7 +124,7 @@ function WebGLGeometries( gl, attributes, info, bindingStates ) {
 
 		// check whether a 32 bit or 16 bit buffer is required to store the indices
 		// account for PRIMITIVE_RESTART_FIXED_INDEX, #24565
-		const attribute = new ( geometryPosition.count >= 65535 ? Uint32BufferAttribute : Uint16BufferAttribute )( indices, 1 );
+		const attribute = new ( geometryPosition.count > 65535 ? Uint32BufferAttribute : Uint16BufferAttribute )( indices, 1 );
 		attribute.version = version;
 
 		// Updating index buffer in VAO now. See WebGLBindingStates
